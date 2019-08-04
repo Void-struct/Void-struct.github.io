@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[模拟退火]]></title>
     <url>%2F2019%2F08%2F04%2F%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%2F</url>
-    <content type="text"><![CDATA[模拟退火 title: 模拟退火categories: 算法学习tags: -模拟退火]]></content>
+    <content type="text"></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>-模拟退火</tag>
+      </tags>
   </entry>
 </search>
