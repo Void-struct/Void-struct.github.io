@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Void-struct">
 <meta property="og:description" content="模拟退火学习小结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-04T10:44:23.403Z">
+<meta property="og:updated_time" content="2019-08-04T11:31:27.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模拟退火">
 <meta name="twitter:description" content="模拟退火学习小结">
@@ -314,7 +314,7 @@
                 
               
 
-              <time title="创建时间：2019-08-04 16:59:50 / 修改时间：18:44:23" itemprop="dateCreated datePublished" datetime="2019-08-04T16:59:50+08:00">2019-08-04</time>
+              <time title="创建时间：2019-08-04 16:59:50 / 修改时间：19:31:27" itemprop="dateCreated datePublished" datetime="2019-08-04T16:59:50+08:00">2019-08-04</time>
             </span>
           
             
@@ -361,7 +361,8 @@
 <p>而模拟退火则是用了一种较为科(玄)学的方法避免陷入局部最优解。</p>
 <p>怎么做呢？</p>
 <p>就是对于一个较差的解，我们也有几率接受，假设此新解与最优解的差为$\Delta E$，此时温度为$T$,则概率为$e^{\frac{\Delta E}{kT}}$。($k$为一随机数，也可将$k$置为一常数)。</p>
-<p>每次Rand这个$\Delta E$，一般为$(rand()<em>2-RAND_MAX)</em>Temperature$,$RAND_MAX$为你这个种子的$Rand$最大值（系统的怜悯）。这样方便$Rand$到正数和负数。</p>
+<p>每次Rand这个$\Delta E$，一般为$(rand()<em>2-RAND_MAX)</em>Temperature$</p>
+<p>$RAND_MAX$为你这个种子的$Rand$最大值（系统的怜悯）。这样方便$Rand$到正数和负数。</p>
 <p>然后就判断是否接受后降温即可(一般取$0.9到0.99$之间,$Temperature*Down$)</p>
 <p>当然，这是个玄学算法，需要有玄学的方法加强它的准确性。</p>
 <p>以下推荐几种</p>
