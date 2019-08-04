@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[模拟退火]]></title>
     <url>%2F2019%2F08%2F04%2F%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[关于模拟退火(以下来自百度百科) 模拟退火算法（Simulate Anneal，SA）是一种通用概率演算法，用来在一个大的搜寻空间内找寻命题的最优解。模拟退火是由S.Kirkpatrick, C.D.Gelatt和M.P.Vecchi在1983年所发明的。V.Čern&yacute;在1985年也独立发明此演算法。模拟退火算法是解决TSP问题的有效方法之一。 模拟退火的出发点是基于物理中固体物质的退火过程与一般组合优化问题之间的相似性。模拟退火算法是一种通用的优化算法，其物理退火过程由加温过程、等温过程、冷却过程这三部分组成。 所以要学OI先学好物理 模拟退火的具体流程![引用自wiki百科](模拟退火/SA wiki.gif)]]></content>
       <categories>
         <category>算法学习</category>
       </categories>
