@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-18T05:11:34.869Z</updated>
+  <updated>2019-08-23T05:54:38.324Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>白金元首与克劳德斯</title>
+    <link href="http://yoursite.com/2019/08/21/%E7%99%BD%E9%87%91%E5%85%83%E9%A6%96%E4%B8%8E%E5%85%8B%E5%8A%B3%E5%BE%B7%E6%96%AF/"/>
+    <id>http://yoursite.com/2019/08/21/白金元首与克劳德斯/</id>
+    <published>2019-08-21T12:50:44.367Z</published>
+    <updated>2019-08-23T05:54:38.324Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;科    学    题&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂题" scheme="http://yoursite.com/categories/%E6%9D%82%E9%A2%98/"/>
+    
+    
+      <category term="-线段树 -思维" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91-%E6%80%9D%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>2019暑期慈溪中学三校学习集训体验</title>
