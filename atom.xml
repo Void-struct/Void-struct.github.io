@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-31T12:16:59.618Z</updated>
+  <updated>2019-09-15T13:23:59.229Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>9.15比赛</title>
+    <link href="http://yoursite.com/2019/09/15/9.15%E6%AF%94%E8%B5%9B/"/>
+    <id>http://yoursite.com/2019/09/15/9.15比赛/</id>
+    <published>2019-09-15T13:22:36.375Z</published>
+    <updated>2019-09-15T13:23:59.229Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;反 向 登 顶&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="常规训练" scheme="http://yoursite.com/categories/%E5%B8%B8%E8%A7%84%E8%AE%AD%E7%BB%83/"/>
+    
+    
+      <category term="-比赛" scheme="http://yoursite.com/tags/%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>白金元首与克劳德斯</title>
