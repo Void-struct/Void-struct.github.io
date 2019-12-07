@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[BZOJ刷题单及一句话心得题解]]></title>
+    <url>%2F2019%2F12%2F07%2FBZOJ%E5%88%B7%E9%A2%98%E5%8D%95%E5%8F%8A%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BF%83%E5%BE%97%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[爆 炸 O J 数 据 结 构 题树线段树线段树合并P4399 魔法少女LJJ 一看十分不可做的题，断点断边维护还以为要$LCT$，但是数据$c&lt;=7$,还开了$20s$,所以线段树合并轻松水过，但是此题的合并姿势十分奇特，用一般的方法会$WA$，比如manchery学长的此题，具体原因我也不是特别清楚，甚至还因为这个卡了一个礼拜……，然后还有一大坑点是询问连通块权值之积，会爆$LL$，要用小数对数来存就可以了，涨姿势了。点此康代码 数 学 题算 法 题乱 搞 题带 模 拟 题]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>-BZOJ -题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CF242E XOR on Segment]]></title>
     <url>%2F2019%2F10%2F05%2FCF242E-XOR-on-Segment%2F</url>
     <content type="text"><![CDATA[分 块 大 法 好 题面给定一个长为$n$($n&lt;=10^5$)的数组 数组里的数不超过$10^6$ 有两种操作： 1:求sum$[l,r]$; 2:对$[l,r]$中的所有数和$x$异或 操作数$m&lt;=5*10^4$ 思路挺好的一道题。 首先看到这题想到用一个数据结构来维护。 那是什么呢？线段树？分块？ 都可以。 但考虑到一个问题——区间异或没有逆分配律。 那怎么办。显然一般的线段树与分块达不到我们的要求。 考虑把每一个数拆开，因为数组里的数不超过$10^6$，所以只需要拆$20$位就可以满足需要。 然后大力分块，每块维护当前这块数$1到20位$的$1$的个数与本块当前的标记$0或是1$。答案就是$[l,r]$中$[1,20]$位分别乘上$2的[1,20]$次方。 代码写得自认为很清楚了。 自己康康吧。 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include&lt;bits/stdc++.h&gt;#define LL intusing namespace std;struct block&#123;int sum[25],tag[25],l,r;&#125;B[100005];int N,Q,a[100005],len,tot,num[100005],p[25];inline void Read(int &amp;x)&#123; int f=1;x=0;char ch=getchar(); while (!isdigit(ch))&#123;if (ch=='-') f=-1;ch=getchar();&#125; while (isdigit(ch))&#123;x=x*10+ch-'0';ch=getchar();&#125; x*=f;&#125;inline void Xor(int l,int r,int x,int id)&#123; if (x==0) return;//如果是0就不用管了 if (num[l]==num[r])&#123;for (int i=l;i&lt;=r;i++) if (a[i]&gt;&gt;id&amp;1) B[num[i]].sum[id]--,a[i]^=(1&lt;&lt;id);else B[num[i]].sum[id]++,a[i]^=(1&lt;&lt;id); &#125; else &#123; for (int i=l;i&lt;=B[num[l]].r;i++) if (a[i]&gt;&gt;id&amp;1) B[num[i]].sum[id]--,a[i]^=(1&lt;&lt;id);else B[num[i]].sum[id]++,a[i]^=(1&lt;&lt;id); for (int i=num[l]+1;i&lt;=num[r]-1;i++) B[i].tag[id]^=1; for (int i=B[num[r]].l;i&lt;=r;i++) if (a[i]&gt;&gt;id&amp;1) B[num[i]].sum[id]--,a[i]^=(1&lt;&lt;id);else B[num[i]].sum[id]++,a[i]^=(1&lt;&lt;id); &#125;&#125;inline int ask(int l,int r,int id)&#123; int res=0; if (num[l]==num[r])&#123;for (int i=l;i&lt;=r;i++) if (B[num[i]].tag[id]^((a[i]&gt;&gt;id)&amp;1)) res++;&#125; else &#123; for (int i=l;i&lt;=B[num[l]].r;i++) if (B[num[i]].tag[id]^((a[i]&gt;&gt;id)&amp;1)) res++; for (int i=num[l]+1;i&lt;=num[r]-1;i++) if (B[i].tag[id]==1) res+=len-B[i].sum[id];else res+=B[i].sum[id];//如果块的id位上标记为1，则1变0,0变1 for (int i=B[num[r]].l;i&lt;=r;i++) if (B[num[i]].tag[id]^((a[i]&gt;&gt;id)&amp;1)) res++; &#125; return res;&#125;int main()&#123; p[0]=1; for (int i=1;i&lt;=20;i++) p[i]=p[i-1]*2; Read(N); for (int i=1;i&lt;=N;i++) Read(a[i]); Read(Q); len=sqrt(N); tot=N/len; if (N%len) tot++; for (int i=1;i&lt;=tot;i++) B[i].l=len*(i-1)+1,B[i].r=len*i; B[tot].r=N; for (int i=1;i&lt;=N;i++) num[i]=(i-1)/len+1; for (int id=0;id&lt;=20;id++)&#123;for (int i=1;i&lt;=N;i++) B[num[i]].sum[id]+=((a[i]&gt;&gt;id)&amp;1);&#125; while (Q--) &#123; int opt,l,r,x; Read(opt); if (opt==1) &#123; Read(l),Read(r); long long ans=0; for (int id=0;id&lt;=20;id++) ans+=1LL*ask(l,r,id)*p[id]; cout&lt;&lt;ans&lt;&lt;endl; &#125; else &#123; Read(l),Read(r),Read(x); for (int id=0;id&lt;=20;id++) Xor(l,r,x&gt;&gt;id&amp;1,id); &#125; &#125; return 0;&#125;]]></content>
