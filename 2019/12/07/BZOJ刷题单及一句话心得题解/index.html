@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Void-struct">
 <meta property="og:description" content="爆 炸 O J">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-07T15:05:43.784Z">
+<meta property="og:updated_time" content="2019-12-24T15:18:21.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ刷题单及一句话心得题解">
 <meta name="twitter:description" content="爆 炸 O J">
@@ -259,11 +259,21 @@
                 
               
 
-              <time title="创建时间：2019-12-07 22:51:31 / 修改时间：23:05:43" itemprop="dateCreated datePublished" datetime="2019-12-07T22:51:31+08:00">2019-12-07</time>
+              <time title="创建时间：2019-12-07 22:51:31" itemprop="dateCreated datePublished" datetime="2019-12-07T22:51:31+08:00">2019-12-07</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-24 23:18:21" itemprop="dateModified" datetime="2019-12-24T23:18:21+08:00">2019-12-24</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -295,7 +305,9 @@
       
         <p>爆 炸 O J</p>
 <a id="more"></a>
-<h2 id="数-据-结-构-题"><a href="#数-据-结-构-题" class="headerlink" title="数 据 结 构 题"></a>数 据 结 构 题</h2><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><h4 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h4><h5 id="线段树合并"><a href="#线段树合并" class="headerlink" title="线段树合并"></a>线段树合并</h5><p><a href="http://darkbzoj.tk/problem/4399" target="_blank" rel="noopener">P4399 魔法少女LJJ</a> 一看十分不可做的题，断点断边维护还以为要$LCT$，但是数据$c&lt;=7$,还开了$20s$,所以线段树合并轻松水过，但是此题的合并姿势十分奇特，用一般的方法会$WA$，比如<a href="https://blog.csdn.net/u014609452/article/details/50887038" target="_blank" rel="noopener">manchery学长的此题</a>，具体原因我也不是特别清楚，<del>甚至还因为这个卡了一个礼拜……</del>，然后还有一大坑点是询问连通块权值之积，会爆$LL$，要用小数对数来存就可以了，涨姿势了。<a href="https://www.luogu.com.cn/paste/foqibx7z" target="_blank" rel="noopener">点此康代码</a></p>
+<h2 id="数-据-结-构-题"><a href="#数-据-结-构-题" class="headerlink" title="数 据 结 构 题"></a>数 据 结 构 题</h2><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><h4 id="主席树"><a href="#主席树" class="headerlink" title="主席树"></a>主席树</h4><p><a href="https://www.luogu.com.cn/problem/P3302" target="_blank" rel="noopener">P3302[SDOI2013]森林</a>比较恶心，一开始还以为是$LCT$的题，但一看到第$k$小就想到了主席树，可以用启发式合并优化合并操作到$logn$，然后查询可以用树上点差分的方式优化到$logn$，但$LCA$细节十分恶心，比如不能用普通的倍增范围，因为有合并操作，然后还要一开始判断一下$x==y$，被卡了好久，维护的东西也较多。<a href="https://www.luogu.com.cn/paste/pfwbynza" target="_blank" rel="noopener">点此康代码</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3168" target="_blank" rel="noopener">P3168 [CQOI2015]任务查询系统</a>这个就比较简单了，相较于$P3302[SDOI2013]森林$，离散化优先级$p$后直接差分开搞，比较套路题，就是获取$k$过程中要开LL。<a href="https://www.luogu.com.cn/paste/r4tkk61o" target="_blank" rel="noopener">点此康代码</a></p>
+<h4 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h4><h5 id="线段树合并"><a href="#线段树合并" class="headerlink" title="线段树合并"></a>线段树合并</h5><p><a href="http://darkbzoj.tk/problem/4399" target="_blank" rel="noopener">P4399 魔法少女LJJ</a> 一看十分不可做的题，断点断边维护还以为要$LCT$，但是数据$c&lt;=7$,还开了$20s$,所以线段树合并轻松水过，但是此题的合并姿势十分奇特，用一般的方法会$WA$，比如<a href="https://blog.csdn.net/u014609452/article/details/50887038" target="_blank" rel="noopener">manchery学长的此题</a>，具体原因我也不是特别清楚，<del>甚至还因为这个卡了一个礼拜……</del>，然后还有一大坑点是询问连通块权值之积，会爆$LL$，要用小数对数来存就可以了，涨姿势了。<a href="https://www.luogu.com.cn/paste/foqibx7z" target="_blank" rel="noopener">点此康代码</a></p>
 <h2 id="数-学-题"><a href="#数-学-题" class="headerlink" title="数 学 题"></a>数 学 题</h2><h2 id="算-法-题"><a href="#算-法-题" class="headerlink" title="算 法 题"></a>算 法 题</h2><h2 id="乱-搞-题"><a href="#乱-搞-题" class="headerlink" title="乱 搞 题"></a>乱 搞 题</h2><h2 id="带-模-拟-题"><a href="#带-模-拟-题" class="headerlink" title="带 模 拟 题"></a>带 模 拟 题</h2>
     </div>
 
@@ -447,7 +459,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数-据-结-构-题"><span class="nav-number">1.</span> <span class="nav-text">数 据 结 构 题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#树"><span class="nav-number">1.1.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线段树"><span class="nav-number">1.1.1.</span> <span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线段树合并"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">线段树合并</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数-学-题"><span class="nav-number">2.</span> <span class="nav-text">数 学 题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算-法-题"><span class="nav-number">3.</span> <span class="nav-text">算 法 题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#乱-搞-题"><span class="nav-number">4.</span> <span class="nav-text">乱 搞 题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带-模-拟-题"><span class="nav-number">5.</span> <span class="nav-text">带 模 拟 题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数-据-结-构-题"><span class="nav-number">1.</span> <span class="nav-text">数 据 结 构 题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#树"><span class="nav-number">1.1.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主席树"><span class="nav-number">1.1.1.</span> <span class="nav-text">主席树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线段树"><span class="nav-number">1.1.2.</span> <span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线段树合并"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">线段树合并</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数-学-题"><span class="nav-number">2.</span> <span class="nav-text">数 学 题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算-法-题"><span class="nav-number">3.</span> <span class="nav-text">算 法 题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#乱-搞-题"><span class="nav-number">4.</span> <span class="nav-text">乱 搞 题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带-模-拟-题"><span class="nav-number">5.</span> <span class="nav-text">带 模 拟 题</span></a></li></ol></div>
             
 
           </div>
