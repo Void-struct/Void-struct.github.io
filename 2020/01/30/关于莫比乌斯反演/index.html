@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Void-struct">
 <meta property="og:description" content="懵 逼 钨 丝">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-17T16:02:40.619Z">
+<meta property="og:updated_time" content="2020-02-17T16:09:45.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="莫比乌斯反演的证明及应用(包含杜教筛)">
 <meta name="twitter:description" content="懵 逼 钨 丝">
@@ -272,7 +272,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-18 00:02:40" itemprop="dateModified" datetime="2020-02-18T00:02:40+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 00:09:45" itemprop="dateModified" datetime="2020-02-18T00:09:45+08:00">2020-02-18</time>
               </span>
             
           
@@ -333,7 +333,10 @@
 <p>也就有$g(n)=\sum_{d\mid n}\mu(d)f(n/d)=\sum_{d/n}\mu(n/d)f(d)$</p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="P1829-国家集训队-Crash的数字表格-JZPTAB"><a href="#P1829-国家集训队-Crash的数字表格-JZPTAB" class="headerlink" title="P1829 [国家集训队]Crash的数字表格 / JZPTAB"></a><a href="https://www.luogu.com.cn/problem/P1829" target="_blank" rel="noopener">P1829 [国家集训队]Crash的数字表格 / JZPTAB</a></h4><p>就是求$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)$</p>
 <p>显而易见是莫反题</p>
-<p>$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)=\sum^{min(n,m)}_{k=1}\sum^{n}_{i=1}\sum^{m}_{j=1}i<em>j/k</em>[gcd(i,j)=k]=\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}i<em>j</em>k<em>[gcd(i,j)=1]=\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}i</em>j<em>k</em>\sum_{d\mid gcd(i,j)}\mu(d)$</p>
+<p>$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)$.</p>
+<p>可变为$\sum^{min(n,m)}_{k=1}\sum^{n}_{i=1}\sum^{m}_{j=1}i<em>j/k</em>[gcd(i,j)=k]$.</p>
+<p>然后变为$\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}i<em>j</em>k*[gcd(i,j)=1]$.</p>
+<p>等于$\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}i<em>j</em>k*\sum_{d\mid gcd(i,j)}\mu(d)$.</p>
 <p>上面又等于$\sum^{min(n,m)}_{k=1}k\sum^{n/k}_{i=1}i\sum^{m/k}_{j=1}j\sum_{d\mid gcd(i,j)}\mu(d)$</p>
 <p>然后枚举$d$</p>
 <p>可得$\sum^{min(n,m)}_{k=1}k\sum^{min(n/k,m/k)}_{d=1}\mu(d)d^2\sum^{n/kd}_{i=1}i\sum^{m/kd}_{j=1}j$</p>
