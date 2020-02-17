@@ -57,14 +57,14 @@
   <meta name="description" content="懵 逼 钨 丝">
 <meta name="keywords" content="-莫比乌斯反演">
 <meta property="og:type" content="article">
-<meta property="og:title" content="莫比乌斯反演的证明及应用">
+<meta property="og:title" content="莫比乌斯反演的证明及应用(包含杜教筛)">
 <meta property="og:url" content="http://yoursite.com/2020/01/30/关于莫比乌斯反演/index.html">
 <meta property="og:site_name" content="Void-struct">
 <meta property="og:description" content="懵 逼 钨 丝">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-31T06:25:44.955Z">
+<meta property="og:updated_time" content="2020-02-17T15:55:37.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="莫比乌斯反演的证明及应用">
+<meta name="twitter:title" content="莫比乌斯反演的证明及应用(包含杜教筛)">
 <meta name="twitter:description" content="懵 逼 钨 丝">
   <link rel="alternate" href="/atom.xml" title="Void-struct" type="application/atom+xml">
   <link rel="canonical" href="http://yoursite.com/2020/01/30/关于莫比乌斯反演/">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>莫比乌斯反演的证明及应用 | Void-struct</title>
+  <title>莫比乌斯反演的证明及应用(包含杜教筛) | Void-struct</title>
   
 
 
@@ -239,7 +239,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">莫比乌斯反演的证明及应用
+          <h1 class="post-title" itemprop="name headline">莫比乌斯反演的证明及应用(包含杜教筛)
 
               
             
@@ -272,7 +272,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-31 14:25:44" itemprop="dateModified" datetime="2020-01-31T14:25:44+08:00">2020-01-31</time>
+                <time title="修改时间：2020-02-17 23:55:37" itemprop="dateModified" datetime="2020-02-17T23:55:37+08:00">2020-02-17</time>
               </span>
             
           
@@ -331,6 +331,16 @@
 <p>两边把$b$逆元一卷，完美消掉。</p>
 <p>便证得$g=F\times \mu$</p>
 <p>也就有$g(n)=\sum_{d\mid n}\mu(d)f(n/d)=\sum_{d/n}\mu(n/d)f(d)$</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="P1829-国家集训队-Crash的数字表格-JZPTAB"><a href="#P1829-国家集训队-Crash的数字表格-JZPTAB" class="headerlink" title="P1829 [国家集训队]Crash的数字表格 / JZPTAB"></a><a href="https://www.luogu.com.cn/problem/P1829" target="_blank" rel="noopener">P1829 [国家集训队]Crash的数字表格 / JZPTAB</a></h4><p>就是求$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)$</p>
+<p>显而易见是莫反题$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)=\sum^{min(n,m)}_{k=1}\sum^{n}_{i=1}\sum^{m}_{j=1}i<em>j/k</em>[gcd(i,j)=k]=\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}i<em>j</em>k<em>[gcd(i,j)=1]=\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}i</em>j<em>k</em>\sum_{d\mid gcd(i,j)}\mu(d)$</p>
+<p>上面又等于$\sum^{min(n,m)}_{k=1}k\sum^{n/k}_{i=1}i\sum^{m/k}_{j=1}j\sum_{d\mid gcd(i,j)}\mu(d)$</p>
+<p>然后枚举$d$</p>
+<p>可得$\sum^{min(n,m)}_{k=1}k\sum^{min(n/k,m/k)}_{d=1}\mu(d)d^2\sum^{n/kd}_{i=1}i\sum^{m/kd}_{j=1}j$</p>
+<p>显而易见这个$\mu(d)d^2$是积性函数可以筛，这个自己推导下。</p>
+<p>然后除法搞定。</p>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Maxn 10000005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Mod 20101009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">LL prime[<span class="number">2</span>*Maxn],g[<span class="number">2</span>*Maxn],sum[<span class="number">2</span>*Maxn],N,M,cnt=<span class="number">0</span>,Ans=<span class="number">0</span>,p[<span class="number">2</span>*Maxn];</span><br><span class="line"><span class="keyword">bool</span> is_prime[<span class="number">2</span>*Maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;N,&amp;M);</span><br><span class="line">    <span class="built_in">memset</span>(is_prime,<span class="number">1</span>,<span class="keyword">sizeof</span>(is_prime));</span><br><span class="line">    is_prime[<span class="number">0</span>]=is_prime[<span class="number">1</span>]=<span class="number">0</span>;g[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=Maxn<span class="number">-5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (is_prime[i]) g[i]=(<span class="number">1</span>-i+Mod)%Mod,prime[++cnt]=i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=cnt&amp;&amp;i*prime[j]&lt;=Maxn<span class="number">-5</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            is_prime[i*prime[j]]=<span class="number">0</span>;</span><br><span class="line">            g[i*prime[j]]=g[i]*g[prime[j]]%Mod;</span><br><span class="line">            <span class="keyword">if</span> (i%prime[j]==<span class="number">0</span>) &#123;g[i*prime[j]]=g[i];<span class="keyword">break</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=Maxn<span class="number">-5</span>;i++) sum[i]=(sum[i<span class="number">-1</span>]+(g[i]*i%Mod))%Mod;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=Maxn<span class="number">-5</span>;i++) p[i]=(p[i<span class="number">-1</span>]+i)%Mod;</span><br><span class="line">    <span class="keyword">if</span> (N&gt;M) swap(N,M);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> l=<span class="number">1</span>,r;l&lt;=N;l=r+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r=min(N/(N/l),M/(M/l));</span><br><span class="line">        Ans=(Ans+(((sum[r]-sum[l<span class="number">-1</span>]+Mod)%Mod)*p[N/l]%Mod)*p[M/l]%Mod)%Mod;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;Ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h4><p>明天更新</p>
+<h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;tr1/unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Maxn 3000000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">LL T,N;</span><br><span class="line">LL cnt=<span class="number">0</span>,prime[Maxn+<span class="number">5</span>],mu[Maxn+<span class="number">5</span>],phi[Maxn+<span class="number">5</span>];</span><br><span class="line"><span class="keyword">bool</span> is_prime[Maxn+<span class="number">5</span>];</span><br><span class="line">LL Sum_Mu[Maxn+<span class="number">5</span>],Sum_Phi[Maxn+<span class="number">5</span>];</span><br><span class="line">tr1::<span class="built_in">unordered_map</span>&lt;LL,LL&gt; SUM_MU,SUM_PHI;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Read</span><span class="params">(LL &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL f=<span class="number">1</span>;x=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))&#123;<span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=<span class="number">-1</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</span><br><span class="line">    x*=f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">Get_Mu_Sum</span><span class="params">(LL X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (X&lt;=Maxn) <span class="keyword">return</span> Sum_Mu[X];</span><br><span class="line">    <span class="keyword">if</span> (SUM_MU[X]) <span class="keyword">return</span> SUM_MU[X];</span><br><span class="line">    LL res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (LL l=<span class="number">2</span>,r;l&lt;=X;l=r+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r=X/(X/l);</span><br><span class="line">        res-=(r-l+<span class="number">1</span>)*Get_Mu_Sum(X/l);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> SUM_MU[X]=res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">Get_Phi_Sum</span><span class="params">(LL X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (X&lt;=Maxn) <span class="keyword">return</span> Sum_Phi[X];</span><br><span class="line">    <span class="keyword">if</span> (SUM_PHI[X]) <span class="keyword">return</span> SUM_PHI[X];</span><br><span class="line">    LL res=(X+<span class="number">1</span>)*X/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (LL l=<span class="number">2</span>,r;l&lt;=X;l=r+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r=X/(X/l);</span><br><span class="line">        res-=(r-l+<span class="number">1</span>)*Get_Phi_Sum(X/l);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> SUM_PHI[X]=res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Get</span><span class="params">(LL X)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(is_prime,<span class="number">1</span>,<span class="keyword">sizeof</span>(is_prime));</span><br><span class="line">    is_prime[<span class="number">0</span>]=is_prime[<span class="number">1</span>]=<span class="number">0</span>;mu[<span class="number">1</span>]=<span class="number">1</span>;phi[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (LL i=<span class="number">1</span>;i&lt;=Maxn;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (is_prime[i]) prime[++cnt]=i,mu[i]=<span class="number">-1</span>,phi[i]=i<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (LL j=<span class="number">1</span>;j&lt;=cnt&amp;&amp;i*prime[j]&lt;=Maxn;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            is_prime[i*prime[j]]=<span class="number">0</span>;</span><br><span class="line">            mu[i*prime[j]]=-mu[i];</span><br><span class="line">            phi[i*prime[j]]=phi[i]*phi[prime[j]];</span><br><span class="line">            <span class="keyword">if</span> (i%prime[j]==<span class="number">0</span>)&#123;mu[i*prime[j]]=<span class="number">0</span>;phi[i*prime[j]]=phi[i]*prime[j];<span class="keyword">break</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (LL i=<span class="number">1</span>;i&lt;=Maxn;i++) Sum_Mu[i]=Sum_Mu[i<span class="number">-1</span>]+mu[i],Sum_Phi[i]=Sum_Phi[i<span class="number">-1</span>]+phi[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Read(T);</span><br><span class="line">    Get(N);</span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        Read(N);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;Get_Phi_Sum(N)&lt;&lt;<span class="string">" "</span>&lt;&lt;Get_Mu_Sum(N)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -356,6 +366,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+              <a href="/2020/02/17/点分治/" rel="prev" title="点分治详解">
+                点分治详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
     </footer>
@@ -410,7 +424,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -433,7 +447,11 @@
         
           
         
-        <span class="site-state-item-count">6</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span>
         
       </div>
@@ -460,7 +478,11 @@
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
@@ -486,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前置知识"><span class="nav-number">1.</span> <span class="nav-text">前置知识</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前置知识"><span class="nav-number">1.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#P1829-国家集训队-Crash的数字表格-JZPTAB"><span class="nav-number">2.1.</span> <span class="nav-text">P1829 [国家集训队]Crash的数字表格 / JZPTAB</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码"><span class="nav-number">2.1.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#杜教筛"><span class="nav-number">2.2.</span> <span class="nav-text">杜教筛</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

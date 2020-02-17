@@ -11,7 +11,6 @@
       $(tocSelector + ' ' + activeCurrentSelector)
         .removeClass(activeCurrentSelector.substring(1));
     }
-
     $tocElement
       .on('activate.bs.scrollspy', function() {
         var $currentActiveElement = $(tocSelector + ' .active').last();

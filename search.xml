@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[莫比乌斯反演的证明及应用]]></title>
+    <title><![CDATA[CDQ分治详解]]></title>
+    <url>%2F2020%2F02%2F17%2FCDQ%E5%88%86%E6%B2%BB%2F</url>
+    <content type="text"><![CDATA[超 短 裙]]></content>
+      <categories>
+        <category>CDQ</category>
+      </categories>
+      <tags>
+        <tag>-CDQ -分治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[点分治详解]]></title>
+    <url>%2F2020%2F02%2F17%2F%E7%82%B9%E5%88%86%E6%B2%BB%2F</url>
+    <content type="text"><![CDATA[淀 粉 质]]></content>
+      <categories>
+        <category>点分治</category>
+      </categories>
+      <tags>
+        <tag>-点分治 -树 -分治</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[莫比乌斯反演的证明及应用(包含杜教筛)]]></title>
     <url>%2F2020%2F01%2F30%2F%E5%85%B3%E4%BA%8E%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%2F</url>
-    <content type="text"><![CDATA[懵 逼 钨 丝 本文参考借鉴于知乎上$Syu Gau$与$阮行止$在$如何证明莫比乌斯反演？$这一问题下的回答. 前置知识1.卷积 首先我们先设$f,g$为两个数论函数。 则卷积定义为$(f\times g)(n)=\sum_{ij=n}f(i)g(j)$。(注意本文的$\times$不是乘,是卷积运算，乘都已省略) 易证卷积满足交换律与结合律。 那么让我们设想一个单位元数论函数$\iota$，这个$\iota$满足$(a\times f)(n)=f(n)$ 那就要满足$(f\times a)(n)=\sum_{ij=n}f(i)a(j)$ 显然$a(n)=[n=1]$ 让我们继续定义，通过狄利克雷卷积可知 对于$f,g$数论函数，还有一种卷积写法为$(f\times g)(n)=\sum_{d\mid n}f(d)g(n/d)$ 用你的膝盖想一想，你会发现$(f\times g)(n)=\sum_{d\mid n}f(d)g(n/d)=\sum_{ij=n}f(i)g(j)$这两种写法完全等价。 OK，到此前置知识全部讲完，让我们开始证明莫比乌斯反演。 我们要证明当有$F(n)=\sum_{d\mid n}g(d)=\sum_{d\mid n}g(n/d)$时,$g(n)=\sum_{d\mid n}\mu(d)f(n/d)=\sum_{d\mid n}\mu(n/d)f(d)$ 考虑转化为狄利克雷卷积,我们设一个函数$b$,它把所有数都映射成1. 则原问题被转化为已知$F=g\times b$。 求证$g=F\times \mu$ 因为单位元函数的性质，任何函数卷上它都是自己本身，所以有$F\times a=g\times b$ 因为莫比乌斯函数定义则$\mu\times b=a$ 这个很好证$(\mu\times b)(n)=\sum_{d\mid n}\mu(d)$ 而$\mu$函数有个性质就是$\sum_{d\mid n}\mu(d)=[n=1]$ 所以上式成立（极不严谨）。 那么$F\times a=g\times b$ 可化为$b\times F\times \mu=g\times b$ 两边把$b$逆元一卷，完美消掉。 便证得$g=F\times \mu$ 也就有$g(n)=\sum_{d\mid n}\mu(d)f(n/d)=\sum_{d/n}\mu(n/d)f(d)$]]></content>
+    <content type="text"><![CDATA[懵 逼 钨 丝 本文参考借鉴于知乎上$Syu Gau$与$阮行止$在$如何证明莫比乌斯反演？$这一问题下的回答. 前置知识1.卷积 首先我们先设$f,g$为两个数论函数。 则卷积定义为$(f\times g)(n)=\sum_{ij=n}f(i)g(j)$。(注意本文的$\times$不是乘,是卷积运算，乘都已省略) 易证卷积满足交换律与结合律。 那么让我们设想一个单位元数论函数$\iota$，这个$\iota$满足$(a\times f)(n)=f(n)$ 那就要满足$(f\times a)(n)=\sum_{ij=n}f(i)a(j)$ 显然$a(n)=[n=1]$ 让我们继续定义，通过狄利克雷卷积可知 对于$f,g$数论函数，还有一种卷积写法为$(f\times g)(n)=\sum_{d\mid n}f(d)g(n/d)$ 用你的膝盖想一想，你会发现$(f\times g)(n)=\sum_{d\mid n}f(d)g(n/d)=\sum_{ij=n}f(i)g(j)$这两种写法完全等价。 OK，到此前置知识全部讲完，让我们开始证明莫比乌斯反演。 我们要证明当有$F(n)=\sum_{d\mid n}g(d)=\sum_{d\mid n}g(n/d)$时,$g(n)=\sum_{d\mid n}\mu(d)f(n/d)=\sum_{d\mid n}\mu(n/d)f(d)$ 考虑转化为狄利克雷卷积,我们设一个函数$b$,它把所有数都映射成1. 则原问题被转化为已知$F=g\times b$。 求证$g=F\times \mu$ 因为单位元函数的性质，任何函数卷上它都是自己本身，所以有$F\times a=g\times b$ 因为莫比乌斯函数定义则$\mu\times b=a$ 这个很好证$(\mu\times b)(n)=\sum_{d\mid n}\mu(d)$ 而$\mu$函数有个性质就是$\sum_{d\mid n}\mu(d)=[n=1]$ 所以上式成立（极不严谨）。 那么$F\times a=g\times b$ 可化为$b\times F\times \mu=g\times b$ 两边把$b$逆元一卷，完美消掉。 便证得$g=F\times \mu$ 也就有$g(n)=\sum_{d\mid n}\mu(d)f(n/d)=\sum_{d/n}\mu(n/d)f(d)$ 应用P1829 [国家集训队]Crash的数字表格 / JZPTAB就是求$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)$ 显而易见是莫反题$\sum^{n}_{i=1}\sum^{m}_{j=1}lcm(i,j)=\sum^{min(n,m)}_{k=1}\sum^{n}_{i=1}\sum^{m}_{j=1}ij/k[gcd(i,j)=k]=\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}ijk[gcd(i,j)=1]=\sum^{min(n,m)}_{k=1}\sum^{n/k}_{i=1}\sum^{m/k}_{j=1}ijk\sum_{d\mid gcd(i,j)}\mu(d)$ 上面又等于$\sum^{min(n,m)}_{k=1}k\sum^{n/k}_{i=1}i\sum^{m/k}_{j=1}j\sum_{d\mid gcd(i,j)}\mu(d)$ 然后枚举$d$ 可得$\sum^{min(n,m)}_{k=1}k\sum^{min(n/k,m/k)}_{d=1}\mu(d)d^2\sum^{n/kd}_{i=1}i\sum^{m/kd}_{j=1}j$ 显而易见这个$\mu(d)d^2$是积性函数可以筛，这个自己推导下。 然后除法搞定。 代码12345678910111213141516171819202122232425262728293031323334#include&lt;bits/stdc++.h&gt;#define Maxn 10000005#define Mod 20101009#define LL long longusing namespace std;LL prime[2*Maxn],g[2*Maxn],sum[2*Maxn],N,M,cnt=0,Ans=0,p[2*Maxn];bool is_prime[2*Maxn];int main()&#123; scanf("%lld%lld",&amp;N,&amp;M); memset(is_prime,1,sizeof(is_prime)); is_prime[0]=is_prime[1]=0;g[1]=1; for (int i=1;i&lt;=Maxn-5;i++) &#123; if (is_prime[i]) g[i]=(1-i+Mod)%Mod,prime[++cnt]=i; for (int j=1;j&lt;=cnt&amp;&amp;i*prime[j]&lt;=Maxn-5;j++) &#123; is_prime[i*prime[j]]=0; g[i*prime[j]]=g[i]*g[prime[j]]%Mod; if (i%prime[j]==0) &#123;g[i*prime[j]]=g[i];break;&#125; &#125; &#125; for (int i=1;i&lt;=Maxn-5;i++) sum[i]=(sum[i-1]+(g[i]*i%Mod))%Mod; for (int i=1;i&lt;=Maxn-5;i++) p[i]=(p[i-1]+i)%Mod; if (N&gt;M) swap(N,M); for (int l=1,r;l&lt;=N;l=r+1) &#123; r=min(N/(N/l),M/(M/l)); Ans=(Ans+(((sum[r]-sum[l-1]+Mod)%Mod)*p[N/l]%Mod)*p[M/l]%Mod)%Mod; &#125; cout&lt;&lt;Ans&lt;&lt;endl; return 0;&#125; 杜教筛明天更新 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869#include&lt;bits/stdc++.h&gt;#include&lt;tr1/unordered_map&gt;#define LL long long#define Maxn 3000000using namespace std;LL T,N;LL cnt=0,prime[Maxn+5],mu[Maxn+5],phi[Maxn+5];bool is_prime[Maxn+5];LL Sum_Mu[Maxn+5],Sum_Phi[Maxn+5];tr1::unordered_map&lt;LL,LL&gt; SUM_MU,SUM_PHI;inline void Read(LL &amp;x)&#123; LL f=1;x=0;char ch=getchar(); while (!isdigit(ch))&#123;if (ch=='-') f=-1;ch=getchar();&#125; while (isdigit(ch))&#123;x=x*10+ch-'0';ch=getchar();&#125; x*=f;&#125;LL Get_Mu_Sum(LL X)&#123; if (X&lt;=Maxn) return Sum_Mu[X]; if (SUM_MU[X]) return SUM_MU[X]; LL res=1; for (LL l=2,r;l&lt;=X;l=r+1) &#123; r=X/(X/l); res-=(r-l+1)*Get_Mu_Sum(X/l); &#125; return SUM_MU[X]=res;&#125;LL Get_Phi_Sum(LL X)&#123; if (X&lt;=Maxn) return Sum_Phi[X]; if (SUM_PHI[X]) return SUM_PHI[X]; LL res=(X+1)*X/2; for (LL l=2,r;l&lt;=X;l=r+1) &#123; r=X/(X/l); res-=(r-l+1)*Get_Phi_Sum(X/l); &#125; return SUM_PHI[X]=res;&#125;void Get(LL X)&#123; memset(is_prime,1,sizeof(is_prime)); is_prime[0]=is_prime[1]=0;mu[1]=1;phi[1]=1; for (LL i=1;i&lt;=Maxn;i++) &#123; if (is_prime[i]) prime[++cnt]=i,mu[i]=-1,phi[i]=i-1; for (LL j=1;j&lt;=cnt&amp;&amp;i*prime[j]&lt;=Maxn;j++) &#123; is_prime[i*prime[j]]=0; mu[i*prime[j]]=-mu[i]; phi[i*prime[j]]=phi[i]*phi[prime[j]]; if (i%prime[j]==0)&#123;mu[i*prime[j]]=0;phi[i*prime[j]]=phi[i]*prime[j];break;&#125; &#125; &#125; for (LL i=1;i&lt;=Maxn;i++) Sum_Mu[i]=Sum_Mu[i-1]+mu[i],Sum_Phi[i]=Sum_Phi[i-1]+phi[i];&#125;int main()&#123; Read(T); Get(N); while (T--) &#123; Read(N); cout&lt;&lt;Get_Phi_Sum(N)&lt;&lt;" "&lt;&lt;Get_Mu_Sum(N)&lt;&lt;endl; &#125; return 0;&#125;]]></content>
       <categories>
         <category>数学</category>
       </categories>
@@ -14,7 +36,7 @@
   <entry>
     <title><![CDATA[BZOJ刷题单及一句话心得题解]]></title>
     <url>%2F2019%2F12%2F07%2FBZOJ%E5%88%B7%E9%A2%98%E5%8D%95%E5%8F%8A%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BF%83%E5%BE%97%E9%A2%98%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[爆 炸 O J 数 据 结 构 题树树链剖分luogu P3313 [SDOI2014]旅行这个真没什么好讲的了，套路题，就是开多颗线段树维护不同教的信息，然后动态开点减少空间即可AC。点此康代码 LCAluogu P2680 运输计划一道思维题，本来以为是树剖(确实可以)，但实现麻烦，于是就二分答案然后树上差分判断，首先我们舍弃掉时间小于二分值的，因为它不用虫洞也不会对答案造成影响，然后对于剩下的找一个最长的且被剩下任务全包含的道路开虫洞，如果最长的任务行那就行了，否则就不行了，代码好写易懂，但是卡常恶心，必须要$tarjan$求$LCA$，把$log$变为$1$才可以通过。点此康代码 主席树luogu P3302[SDOI2013]森林比较恶心，一开始还以为是$LCT$的题，但一看到第$k$小就想到了主席树，可以用启发式合并优化合并操作到$logn$，然后查询可以用树上点差分的方式优化到$logn$，但$LCA$细节十分恶心，比如不能用普通的倍增范围，因为有合并操作，然后还要一开始判断一下$x==y$，被卡了好久，维护的东西也较多。点此康代码 luogu P3168 [CQOI2015]任务查询系统这个就比较简单了，相较于$P3302[SDOI2013]森林$，离散化优先级$p$后直接差分开搞，比较套路题，就是获取$k$过程中要开LL。点此康代码 线段树线段树合并bzoj P4399 魔法少女LJJ 一看十分不可做的题，断点断边维护还以为要$LCT$，但是数据$c&lt;=7$,还开了$20s$,所以线段树合并轻松水过，但是此题的合并姿势十分奇特，用一般的方法会$WA$，比如manchery学长的此题，具体原因我也不是特别清楚，甚至还因为这个卡了一个礼拜……，然后还有一大坑点是询问连通块权值之积，会爆$LL$，要用小数对数来存就可以了，涨姿势了。点此康代码 数 学 题算 法 题乱 搞 题带 模 拟 题]]></content>
+    <content type="text"><![CDATA[爆 炸 O J 数 据 结 构 题树点分治P2634 [国家集训队]聪聪可可明天更新 树链剖分luogu P3313 [SDOI2014]旅行这个真没什么好讲的了，套路题，就是开多颗线段树维护不同教的信息，然后动态开点减少空间即可AC。点此康代码 LCAluogu P2680 运输计划一道思维题，本来以为是树剖(确实可以)，但实现麻烦，于是就二分答案然后树上差分判断，首先我们舍弃掉时间小于二分值的，因为它不用虫洞也不会对答案造成影响，然后对于剩下的找一个最长的且被剩下任务全包含的道路开虫洞，如果最长的任务行那就行了，否则就不行了，代码好写易懂，但是卡常恶心，必须要$tarjan$求$LCA$，把$log$变为$1$才可以通过。点此康代码 主席树luogu P3302[SDOI2013]森林比较恶心，一开始还以为是$LCT$的题，但一看到第$k$小就想到了主席树，可以用启发式合并优化合并操作到$logn$，然后查询可以用树上点差分的方式优化到$logn$，但$LCA$细节十分恶心，比如不能用普通的倍增范围，因为有合并操作，然后还要一开始判断一下$x==y$，被卡了好久，维护的东西也较多。点此康代码 luogu P3168 [CQOI2015]任务查询系统这个就比较简单了，相较于$P3302[SDOI2013]森林$，离散化优先级$p$后直接差分开搞，比较套路题，就是获取$k$过程中要开LL。点此康代码 线段树线段树合并bzoj P4399 魔法少女LJJ 一看十分不可做的题，断点断边维护还以为要$LCT$，但是数据$c&lt;=7$,还开了$20s$,所以线段树合并轻松水过，但是此题的合并姿势十分奇特，用一般的方法会$WA$，比如manchery学长的此题，具体原因我也不是特别清楚，甚至还因为这个卡了一个礼拜……，然后还有一大坑点是询问连通块权值之积，会爆$LL$，要用小数对数来存就可以了，涨姿势了。点此康代码 数 学 题P1829 [国家集训队]Crash的数字表格 / JZPTAB在关于莫比乌斯反演中有提到。 算 法 题CDQ分治(应该算算法吧)P4169 [Violet]天使玩偶/SJY摆棋子明天更新 乱 搞 题带 模 拟 题]]></content>
       <categories>
         <category>题解</category>
       </categories>
